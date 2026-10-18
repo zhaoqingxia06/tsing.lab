@@ -264,6 +264,14 @@ section { scroll-margin-top: 76px; }
   color: var(--ink-3);
 }
 
+/* 真实产品截图卡面：保留原生比例，不裁切 */
+.window-shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1440 / 620;
+  object-fit: cover;
+}
+
 /* 卡片下半部分：序号 + 名称描述 + 按钮，收在卡内 */
 .work-info {
   padding: 26px 28px 28px;
@@ -284,6 +292,7 @@ section { scroll-margin-top: 76px; }
 .work:nth-of-type(2) .work-no { color: var(--dot-2); }
 .work:nth-of-type(3) .work-no { color: var(--dot-3); }
 .work:nth-of-type(4) .work-no { color: var(--dot-4); }
+.work:nth-of-type(5) .work-no { color: var(--dot-1); }
 
 .work-name {
   font-size: 1.3rem;
