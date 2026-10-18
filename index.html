@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://zhaoqingxia06.github.io/assets/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- 改过 css/js 后如果浏览器没刷新，把下面的 v=数字 加一 -->
-  <link rel="stylesheet" href="css/style.css?v=20" />
+  <link rel="stylesheet" href="css/style.css?v=28" />
 </head>
 <body>
 
@@ -77,30 +77,83 @@
       <div class="container">
 
         <!--
-          ▼▼▼ 工具卡片模板说明 ▼▼▼
-          每张卡片 = 一个 .work 区块。想加新工具：复制一整个 <article class="work"> … </article>，
-          改序号、名称、描述、链接即可。演示窗口（.window 里的内容）可以整块替换成你的产品截图：
-          <img src="assets/xxx.png" alt="工具截图" />
+          ▼▼▼ 作品卡片模板说明 ▼▼▼
+          每张卡片 = 一个 .work 区块，左右结构：
+          左边 .window 是产品可视化（截图 / GIF / 视频），
+          右边 .work-info 是序号 + 名称 + 一句话介绍 + 三个卖点 + 入口按钮。
+
+          想换左边的可视化内容，把 .window 里换成（class 记得用 window-media）：
+            产品截图或 GIF：<img class="window-media" src="assets/xxx.png" alt="产品截图" loading="lazy" />
+            介绍视频：      <video class="window-media" src="assets/xxx.mp4" muted loop playsinline autoplay></video>
+
+          想加新作品：复制一整个 <article class="work"> … </article>，
+          改序号、名称、介绍、卖点、链接即可。还没有真实链接时，入口按钮用：
+            <span class="work-cta is-soon">敬请期待</span>
         -->
 
         <!-- ── 作品 01：任务档案（真实上线） ── -->
         <article class="work">
           <div class="window">
             <div class="window-bar"><i></i><i></i><i></i><span>TaskArchive · 任务档案</span></div>
-            <img class="window-shot" src="assets/work-archive.png" width="1440" height="620"
+            <img class="window-media" src="assets/work-archive.png" width="1440" height="620"
                  alt="任务档案页面截图：大标题、任务统计与分类标签栏" loading="lazy" />
           </div>
           <div class="work-info">
             <div class="work-no">01</div>
-            <div class="work-text">
-              <h3 class="work-name">任务档案</h3>
-              <p class="work-desc">把我在各个 AI 平台发布的 260+ 个任务自动整理成一份可检索的档案，每天 12 点自动更新。</p>
-            </div>
+            <h3 class="work-name">任务档案</h3>
+            <p class="work-desc">把多个平台与 AI 的对话历史自动分类整理，成为一目了然的工作中台。</p>
+            <ul class="work-points">
+              <li><strong>多平台聚合</strong>Codex、ChatGPT、ZCode 的对话汇成一份档案</li>
+              <li><strong>自动分类</strong>按产品与主题分组，结构化呈现每条需求</li>
+              <li><strong>每日更新</strong>每天 12 点自动同步，随时可查最新记录</li>
+            </ul>
             <a class="work-cta" href="https://zhaoqingxia06.github.io/TaskArchive/" target="_blank" rel="noopener">查看档案<span class="arr" aria-hidden="true">→</span></a>
           </div>
         </article>
 
-        <!-- ── 工具 02：PPT Maker ── -->
+        <!-- ── 作品 02：ChatNote（开源扩展，真实可装） ── -->
+        <article class="work">
+          <div class="window demo-chatnote" aria-hidden="true">
+            <div class="window-bar"><i></i><i></i><i></i><span>ChatNote · ChatGPT 侧栏笔记</span></div>
+            <div class="cn-body">
+              <div class="cn-chat">
+                <div class="cn-msg is-user"><span>帮我对比这几款 eBike 的参数</span></div>
+                <div class="cn-msg is-ai">
+                  <div class="mock-line w-90"></div>
+                  <div class="cn-table"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="cn-msg is-ai is-selected">
+                  <div class="mock-line w-75"></div>
+                  <div class="mock-line w-60"></div>
+                </div>
+                <span class="cn-excerpt">摘录到笔记 →</span>
+              </div>
+              <div class="cn-divider"><i></i></div>
+              <div class="cn-note">
+                <div class="mock-line is-title w-60"></div>
+                <div class="mock-line w-90"></div>
+                <div class="cn-todo"><i class="cn-check"></i><span class="mock-line cn-check-line"></span></div>
+                <div class="cn-quote">
+                  <div class="mock-line w-90"></div>
+                  <div class="mock-line w-60"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-info">
+            <div class="work-no">02</div>
+            <h3 class="work-name">ChatNote</h3>
+            <p class="work-desc">开源浏览器扩展：在 ChatGPT 侧边随手摘录对话，沉淀为 Markdown 笔记。</p>
+            <ul class="work-points">
+              <li><strong>对话即笔记</strong>每个聊天独立关联一份 Markdown 笔记</li>
+              <li><strong>一键摘录</strong>选中即存，表格与代码格式原样保留</li>
+              <li><strong>本地保存</strong>数据不出浏览器，也可写入 MD 文件</li>
+            </ul>
+            <a class="work-cta" href="https://github.com/zhaoqingxia06/ChatNote" target="_blank" rel="noopener">查看源码<span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- ── 作品 03：PPT Maker ── -->
         <article class="work">
           <div class="window demo-ppt" aria-hidden="true">
             <div class="window-bar"><i></i><i></i><i></i><span>PPT Maker</span></div>
@@ -121,17 +174,20 @@
             </div>
           </div>
           <div class="work-info">
-            <div class="work-no">02</div>
-            <div class="work-text">
-              <h3 class="work-name">PPT Maker</h3>
-              <p class="work-desc">输入主题和大纲，自动生成一份可以继续编辑的演示文稿。</p>
-            </div>
+            <div class="work-no">03</div>
+            <h3 class="work-name">PPT Maker</h3>
+            <p class="work-desc">输入主题与大纲，自动生成可继续编辑的演示文稿。</p>
+            <ul class="work-points">
+              <li><strong>大纲驱动</strong>先定结构，再逐页生成内容</li>
+              <li><strong>二次编辑</strong>导出标准 PPT 格式，可继续修改</li>
+              <li><strong>自动排版</strong>标题、要点与配图位置自动对齐</li>
+            </ul>
             <!-- 有真实链接后，把下面整行换回 <a class="work-cta" href="真实地址">打开工具 →</a> -->
             <span class="work-cta is-soon">敬请期待</span>
           </div>
         </article>
 
-        <!-- ── 工具 02：旅行规划 ── -->
+        <!-- ── 作品 04：旅行规划 ── -->
         <article class="work">
           <div class="window demo-trip" aria-hidden="true">
             <div class="window-bar"><i></i><i></i><i></i><span>旅行规划</span></div>
@@ -149,16 +205,19 @@
             </div>
           </div>
           <div class="work-info">
-            <div class="work-no">03</div>
-            <div class="work-text">
-              <h3 class="work-name">旅行规划</h3>
-              <p class="work-desc">输入目的地和天数，生成一份包含行程、预算与打包清单的旅行计划。</p>
-            </div>
+            <div class="work-no">04</div>
+            <h3 class="work-name">旅行规划</h3>
+            <p class="work-desc">输入目的地与天数，生成行程、预算与打包清单。</p>
+            <ul class="work-points">
+              <li><strong>按天拆解</strong>景点、交通、用餐排进每一天</li>
+              <li><strong>预算预估</strong>住宿、门票、大交通提前估算</li>
+              <li><strong>清单齐全</strong>打包清单与出行提醒一并生成</li>
+            </ul>
             <span class="work-cta is-soon">敬请期待</span>
           </div>
         </article>
 
-        <!-- ── 工具 03：字幕剪辑 ── -->
+        <!-- ── 作品 05：字幕剪辑 ── -->
         <article class="work">
           <div class="window demo-video" aria-hidden="true">
             <div class="window-bar"><i></i><i></i><i></i><span>字幕剪辑</span></div>
@@ -176,16 +235,19 @@
             </div>
           </div>
           <div class="work-info">
-            <div class="work-no">04</div>
-            <div class="work-text">
-              <h3 class="work-name">字幕剪辑</h3>
-              <p class="work-desc">给视频自动添加字幕，顺手完成剪切、拼接这些简单的剪辑。</p>
-            </div>
+            <div class="work-no">05</div>
+            <h3 class="work-name">字幕剪辑</h3>
+            <p class="work-desc">为视频自动生成字幕，并完成剪切与拼接。</p>
+            <ul class="work-points">
+              <li><strong>自动识别</strong>语音转字幕，时间轴自动对齐</li>
+              <li><strong>轻量剪辑</strong>剪切、拼接、字幕一站完成</li>
+              <li><strong>灵活导出</strong>字幕可烧录进视频，也可单独导出</li>
+            </ul>
             <span class="work-cta is-soon">敬请期待</span>
           </div>
         </article>
 
-        <!-- ── 工具 04：AI 资讯 ── -->
+        <!-- ── 作品 06：AI 资讯 ── -->
         <article class="work">
           <div class="window demo-news" aria-hidden="true">
             <div class="window-bar"><i></i><i></i><i></i><span>AI 资讯</span></div>
@@ -197,11 +259,14 @@
             </ul>
           </div>
           <div class="work-info">
-            <div class="work-no">05</div>
-            <div class="work-text">
-              <h3 class="work-name">AI 资讯</h3>
-              <p class="work-desc">每天聚合一次 AI 领域的新消息：新模型、新论文、新工具。</p>
-            </div>
+            <div class="work-no">06</div>
+            <h3 class="work-name">AI 资讯</h3>
+            <p class="work-desc">每日聚合 AI 领域的新模型、新论文与新工具。</p>
+            <ul class="work-points">
+              <li><strong>每日一更</strong>5 分钟看完当天 AI 动态</li>
+              <li><strong>来源聚合</strong>官方博客、开源社区与论文一站收录</li>
+              <li><strong>按主题筛选</strong>只看关心的方向，减少信息噪音</li>
+            </ul>
             <span class="work-cta is-soon">敬请期待</span>
           </div>
         </article>
@@ -212,67 +277,69 @@
     <section class="section panel" id="about" role="tabpanel" aria-labelledby="tabAbout" hidden>
       <div class="container">
 
-        <div class="about-grid">
-          <div class="about-intro">
-            <p class="about-name">Tsing</p>
-            <p class="about-bio">
-              你好，我是 Tsing（赵青霞），一名 AI 产品经理。做过手机上的听力辅助与手语翻译产品，
-              也把一款智能电动车从 0 做到北美上市。工作之余喜欢折腾各种小工具，
-              相信「能自己动手做的，就自己动手做」。
-            </p>
-            <ul class="about-facts">
-              <li><span>坐标</span>深圳</li>
-              <li><span>职业</span>AI 产品经理</li>
-              <li><span>关注</span>AI · 无障碍 · 出行</li>
-              <li><span>状态</span>在做小东西</li>
-            </ul>
-          </div>
-
-          <div class="about-exp">
-            <h3 class="exp-title">经历 <span>/ EXPERIENCE</span></h3>
-            <div class="exp-list">
-
-            <!-- ▼▼▼ 经历卡片：想加一段经历，复制一个 <div class="exp-item"> … </div> ▼▼▼ -->
-            <div class="exp-item">
-              <span class="exp-time">2025 – 至今</span>
-              <div class="exp-main">
-                <p class="exp-role">vivo · OS 产品经理</p>
-                <p class="exp-desc">负责手机听力辅助模块（语音识别、环境音识别、手语翻译，日活约 16 万），交付手语翻译官 2.0、自定义声音与 AI 手语陪练。</p>
-              </div>
-            </div>
-
-            <div class="exp-item">
-              <span class="exp-time">2023 – 2025</span>
-              <div class="exp-main">
-                <p class="exp-role">九号公司 · 整车产品经理</p>
-                <p class="exp-desc">eBike 通勤车全生命周期管理：市场定位到上市交付，核心卖点电子变速与后方盲区监测，2026 年 1 月 CES 北美上市。</p>
-              </div>
-            </div>
-
-            <div class="exp-item">
-              <span class="exp-time">2017 – 2023</span>
-              <div class="exp-main">
-                <p class="exp-role">东华大学 / 山东理工大学 · 工业设计</p>
-                <p class="exp-desc">硕士（推免，专业第一）、学士；韩国中央大学交换一年，获国家奖学金。</p>
-              </div>
-            </div>
-
-            </div>
+        <!-- 首行：角色；第二行：位置 + 联系方式（带图标） -->
+        <div class="about-head">
+          <p class="about-role">产品经理 <span>/ Product Manager</span></p>
+          <div class="about-head-meta">
+            <span class="about-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>深圳</span>
+            </span>
+            <a class="about-meta-item" href="mailto:2484576711@qq.com">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span>2484576711@qq.com</span>
+            </a>
+            <a class="about-meta-item" href="https://github.com/zhaoqingxia06" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8 8 0 0 1-5.47 7.59c-.4.07-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              <span>GitHub</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ========== 联系方式 ========== -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title" data-en="Elsewhere">联系</h2>
+        <p class="about-bio">
+          大家好，我是 Tsing，一名产品经理。上一站把一辆 eBike 从概念一路做到上市，
+          这一站在手机系统里做听力辅助；业余喜欢折腾各种小工具，
+          信奉「能自己动手的，就不假手于人」，想做出一件伟大的产品。
+        </p>
+
+        <h3 class="exp-title">经历 <span>/ EXPERIENCE</span></h3>
+        <div class="exp-list">
+
+        <!-- ▼▼▼ 经历卡片：想加一段经历，复制一个 <div class="exp-item"> … </div> ▼▼▼ -->
+        <div class="exp-item">
+          <span class="exp-time">2025 – 至今</span>
+          <div class="exp-main">
+            <p class="exp-role">vivo · OS 产品经理</p>
+            <p class="exp-desc">负责手机系统中的听力辅助模块，涵盖语音识别、环境音识别与手语翻译等部分。</p>
+          </div>
         </div>
-        <!-- 有新的联系方式后，往 .contact-row 里加 <a class="contact-pill" href="…">名称 ↗</a> 即可 -->
-        <div class="contact-row">
-          <a class="contact-pill" href="https://github.com/zhaoqingxia06" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="contact-pill" href="mailto:2484576711@qq.com">邮箱 ↗</a>
+
+        <div class="exp-item">
+          <span class="exp-time">2023 – 2025</span>
+          <div class="exp-main">
+            <p class="exp-role">九号公司 · 整车产品经理</p>
+            <p class="exp-desc">负责城市通勤 eBike 的整车产品，覆盖从概念、硬件、软件到 GTM 与销售的全链路。</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <span class="exp-time">2022 – 2023</span>
+          <div class="exp-main">
+            <p class="exp-role">蔚来 · 语音导航产品经理</p>
+            <p class="exp-desc">负责车机 NOMI 的语音导航体验，涵盖需求洞察、功能定义与体验交付。</p>
+          </div>
+          <span class="exp-tag">实习</span>
+        </div>
+
+        <div class="exp-item">
+          <span class="exp-time">2022</span>
+          <div class="exp-main">
+            <p class="exp-role">博世 · 碳益 SaaS 产品经理</p>
+            <p class="exp-desc">负责碳计算 SaaS 平台「碳益科技」从 0 到 1，涵盖产品定义、交互设计与上线运营。</p>
+          </div>
+          <span class="exp-tag">实习</span>
+        </div>
+
         </div>
       </div>
     </section>

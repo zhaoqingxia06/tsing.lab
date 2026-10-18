@@ -33,6 +33,9 @@
   --container: 1040px;
   --radius-card: 18px;
   --radius-pill: 999px;
+
+  /* 每张作品卡演示窗口的统一总高度（含标题栏），保证各卡高度一致 */
+  --demo-h: 348px;
 }
 
 /* ---------- 基础 ---------- */
@@ -220,30 +223,47 @@ section { scroll-margin-top: 76px; }
   color: var(--ink-3);
 }
 
-/* ---------- 作品卡：演示窗口 + 信息行合成一张整卡 ---------- */
+/* ---------- 作品卡：左边可视化窗口 + 右边信息栏 ---------- */
 
+/* 作品列表用等高网格：每行自动取最高卡的高度，任何宽度下卡片都严格等高 */
+#tools .container {
+  display: grid;
+  grid-auto-rows: 1fr;
+  row-gap: 46px;
+}
+
+/* 每张卡一个点缀色：序号与卖点圆点跟着变色 */
 .work {
+  --work-accent: var(--dot-1);
   background: var(--bg);
   border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  margin-bottom: 46px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.work:last-child { margin-bottom: 0; }
+.work:nth-of-type(2) { --work-accent: var(--dot-2); }
+.work:nth-of-type(3) { --work-accent: var(--dot-3); }
+.work:nth-of-type(4) { --work-accent: var(--dot-4); }
+.work:nth-of-type(5) { --work-accent: var(--dot-1); }
 
 .work:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
 
-/* 演示窗口是卡片的组成部分（上半部分），不再单独投影 */
+/* 左栏：可视化窗口（截图 / GIF / 视频），高度跟随整卡，最低 --demo-h */
 .window {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--demo-h);
   background: var(--bg);
 }
 
 .window-bar {
+  flex: none;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -256,61 +276,96 @@ section { scroll-margin-top: 76px; }
   height: 10px;
   border-radius: 50%;
   background: #dcdce1;
+  flex: none;
 }
 
 .window-bar span {
   margin-left: 8px;
   font-size: 12px;
   color: var(--ink-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* 真实产品截图卡面：保留原生比例，不裁切 */
-.window-shot {
+/* 产品可视化：截图 / GIF（<img>）与介绍视频（<video>）通用，铺满左栏 */
+.window-media {
   display: block;
   width: 100%;
-  aspect-ratio: 1440 / 620;
+  flex: 1;
+  min-height: 0;
   object-fit: cover;
+  object-position: top;
 }
 
-/* 卡片下半部分：序号 + 名称描述 + 按钮，收在卡内 */
+/* 右栏：序号 + 名称 + 一句话介绍 + 三个卖点 + 入口 */
 .work-info {
-  padding: 26px 28px 28px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
+  padding: 28px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* 序号 01–04 分别用四色点缀 */
 .work-no {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.02em;
-  color: var(--dot-1);
+  color: var(--work-accent);
 }
 
-.work:nth-of-type(2) .work-no { color: var(--dot-2); }
-.work:nth-of-type(3) .work-no { color: var(--dot-3); }
-.work:nth-of-type(4) .work-no { color: var(--dot-4); }
-.work:nth-of-type(5) .work-no { color: var(--dot-1); }
-
 .work-name {
+  margin-top: 10px;
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .work-desc {
-  margin-top: 4px;
+  margin-top: 8px;
   font-size: 15px;
   color: var(--ink-2);
-  max-width: 52ch;
+}
+
+.work-points {
+  list-style: none;
+  margin-top: 18px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.work-points li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--work-accent);
+}
+
+.work-points strong {
+  margin-right: 7px;
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .work-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  /* margin-top:auto 把按钮钉在信息栏底部；最小间距由 .work-points 的下边距兜底 */
+  margin-top: auto;
   white-space: nowrap;
   font-size: 14px;
   font-weight: 600;
@@ -353,9 +408,10 @@ section { scroll-margin-top: 76px; }
 
 /* 01 PPT Maker：左侧大纲 + 右侧幻灯片（用底色区分，不用线） */
 .ppt-body {
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 168px 1fr;
-  min-height: 280px;
 }
 
 .ppt-side {
@@ -384,16 +440,20 @@ section { scroll-margin-top: 76px; }
 }
 
 .ppt-slide {
+  position: relative;
   padding: 36px 38px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 14px;
   align-items: flex-start;
 }
 
+/* 生成按钮钉在幻灯片区右下角，骨架线条组垂直居中 */
 .ppt-generate {
-  margin-top: auto;
-  align-self: flex-end;
+  position: absolute;
+  right: 38px;
+  bottom: 36px;
   font-size: 12px;
   font-weight: 600;
   color: var(--blue);
@@ -405,7 +465,8 @@ section { scroll-margin-top: 76px; }
 /* 02 旅行规划：地图 + 四色路线点 */
 .trip-map {
   position: relative;
-  height: 250px;
+  flex: 1;
+  min-height: 0;
   background:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -460,7 +521,8 @@ section { scroll-margin-top: 76px; }
 /* 03 字幕剪辑：视频画面 + 时间轴 + 波形 */
 .video-frame {
   position: relative;
-  height: 220px;
+  flex: 1;
+  min-height: 0;
   background: #1d1d1f;
   display: grid;
   place-items: center;
@@ -536,10 +598,14 @@ section { scroll-margin-top: 76px; }
 .wave i:nth-child(7n)   { --h: 26px; }
 .wave i:nth-child(11n)  { --h: 16px; }
 
-/* 04 AI 资讯：消息列表（悬停浅蓝，不用分隔线） */
+/* 04 AI 资讯：消息列表（悬停浅蓝，不用分隔线），行距均分撑满窗口 */
 .news-list {
+  flex: 1;
   list-style: none;
-  padding: 8px 8px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .news-row {
@@ -575,56 +641,186 @@ section { scroll-margin-top: 76px; }
   padding: 3px 11px;
 }
 
+/* 02 ChatNote：左侧 ChatGPT 对话 + 右侧 Markdown 笔记，中间可拖分栏 */
+.cn-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3px minmax(0, 42%);
+}
+
+.cn-chat {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cn-msg { display: flex; flex-direction: column; gap: 7px; }
+
+/* 用户消息：右对齐胶囊 */
+.cn-msg.is-user span {
+  align-self: flex-end;
+  max-width: 86%;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  background: var(--panel);
+  border-radius: 14px 14px 4px 14px;
+  padding: 8px 14px;
+}
+
+/* AI 回复里的迷你表格：表头行加深 */
+.cn-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  width: 92%;
+}
+.cn-table i {
+  height: 12px;
+  border-radius: 4px;
+  background: #ececf1;
+}
+.cn-table i:nth-child(-n+3) { background: #d5d5da; }
+
+/* 被选中的回复：线条染成选择蓝 */
+.cn-msg.is-selected .mock-line { background: #d2e3fc; }
+
+/* 选中后浮出的摘录按钮 */
+.cn-excerpt {
+  align-self: flex-end;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--blue-soft);
+  border-radius: var(--radius-pill);
+  padding: 5px 13px;
+  margin-top: -6px;
+}
+
+/* 分栏拖动条：细线 + 抓手 */
+.cn-divider { position: relative; background: var(--line); }
+.cn-divider i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 36px;
+  border-radius: 2px;
+  background: #c3c3c9;
+}
+
+/* 右侧笔记：浅灰底 + 标题 + 待办 + 刚摘录进来的引用块 */
+.cn-note {
+  background: var(--panel);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cn-note .mock-line { background: #dcdce1; }
+
+.cn-todo { display: flex; align-items: center; gap: 9px; }
+
+/* 已勾选的待办：绿色小方块 + 白色对勾 */
+.cn-check {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--dot-4);
+  position: relative;
+}
+.cn-check::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 1.6px 1.6px 0;
+  transform: rotate(40deg);
+}
+.cn-check-line { width: 72%; }
+
+/* 引用块：白底浮起，线条与左侧选中内容同色，暗示「刚摘录进来」 */
+.cn-quote {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cn-quote .mock-line { background: #d2e3fc; }
+
 /* ---------- 关于我 ---------- */
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 72px;
-  padding-top: 8px;
+/* 首行：角色；第二行：位置与联系方式 */
+.about-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.about-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+.about-role {
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -.01em;
 }
+
+.about-role span {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+.about-head-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--panel);
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+a.about-meta-item:hover {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.about-meta-item svg { flex: none; }
 
 .about-bio {
-  margin-top: 14px;
+  margin-top: 22px;
   color: var(--ink-2);
-  max-width: 36ch;
-}
-
-/* 信息格：浅灰面板，不画线 */
-.about-facts {
-  list-style: none;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 28px;
-  background: var(--panel);
-  border-radius: var(--radius-card);
-  padding: 10px 26px;
-}
-
-.about-facts li {
-  padding: 15px 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.about-facts li span {
-  display: block;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--ink-3);
 }
 
 /* 经历：一张张悬浮小卡片 */
 .exp-title {
   font-size: 1.05rem;
   font-weight: 700;
+  margin-top: 44px;
   padding-bottom: 18px;
 }
 
@@ -665,6 +861,14 @@ section { scroll-margin-top: 76px; }
   white-space: nowrap;
 }
 
+/* 行末灰色标记：如「实习」 */
+.exp-tag {
+  font-size: 12px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .exp-role {
   font-size: 15px;
   font-weight: 700;
@@ -674,7 +878,7 @@ section { scroll-margin-top: 76px; }
   margin-top: 3px;
   font-size: 14px;
   color: var(--ink-2);
-  max-width: 46ch;
+  max-width: 64ch;
 }
 
 .exp-link {
@@ -683,30 +887,6 @@ section { scroll-margin-top: 76px; }
   transition: color 0.2s ease;
 }
 .exp-link:hover { color: var(--blue); }
-
-/* ---------- 联系 ---------- */
-
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 4px;
-}
-
-.contact-pill {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink-2);
-  background: var(--panel);
-  border-radius: var(--radius-pill);
-  padding: 11px 24px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.contact-pill:hover {
-  color: var(--blue);
-  background: var(--blue-soft);
-}
 
 /* ---------- 文章（预留区块样式） ---------- */
 
@@ -748,7 +928,7 @@ section { scroll-margin-top: 76px; }
   .hero-blink { display: none; }
   .hero-eyelid { animation: none; }
   html { scroll-behavior: auto; }
-  .window, .work-cta, .contact-pill, .exp-item, .news-row, .post-row,
+  .window, .work-cta, .about-meta-item, .exp-item, .news-row, .post-row,
   .exp-link, .work,
   .hero-character { transition: none; }
 }
@@ -761,12 +941,9 @@ section { scroll-margin-top: 76px; }
   .hero-visual { width: clamp(98px, 20svh, 140px); }
 }
 
-@media (max-width: 860px) {
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-bio { max-width: none; }
-}
-
 @media (max-width: 640px) {
+  :root { --demo-h: 280px; }
+
   .hero-meta { padding-inline: 24px; margin-bottom: 16px; }
   .hero-signature { font-size: 20px; }
   .hero-location { font-size: 14px; }
@@ -776,17 +953,15 @@ section { scroll-margin-top: 76px; }
   .hero-sub { font-size: 15px; }
   .hero-scroll-hint { margin-top: 14px; font-size: 15px; }
 
-  .work { margin-bottom: 36px; }
-  .work-info {
-    padding: 20px 20px 22px;
-    grid-template-columns: auto 1fr;
-    row-gap: 16px;
-  }
-  .work-no { grid-column: 1; grid-row: 1; align-self: center; }
-  .work-text { grid-column: 1 / -1; }
-  .work-cta { grid-column: 1; justify-self: start; }
+  /* 左右卡片在窄屏退回上下结构：可视化在上、信息在下 */
+  #tools .container { row-gap: 36px; }
+  .work { grid-template-columns: 1fr; }
+  .work-info { padding: 22px 22px 24px; }
+  .work-points { gap: 8px; }
 
   .ppt-body { grid-template-columns: 1fr; }
+  .ppt-slide { padding: 22px 24px; gap: 11px; }
+  .ppt-generate { right: 24px; bottom: 22px; }
   .ppt-side {
     flex-direction: row;
     overflow: hidden;
@@ -794,10 +969,16 @@ section { scroll-margin-top: 76px; }
   }
   .ppt-row { flex: 1; min-width: 24px; }
 
+  .cn-body { grid-template-columns: minmax(0, 1fr) 3px minmax(0, 46%); }
+  .cn-chat { padding: 16px 14px; gap: 12px; }
+  .cn-msg.is-user span { font-size: 11px; padding: 6px 12px; }
+  .cn-note { padding: 16px 14px; gap: 10px; }
+  .cn-check-line { width: 60%; }
+
   .exp-item { grid-template-columns: 1fr auto; }
   .exp-time { grid-column: 1 / -1; }
 
-  .about-facts { padding: 8px 20px; column-gap: 18px; }
+  .about-role { font-size: 21px; }
 
   .footer-inner { flex-direction: column; gap: 4px; }
 }
