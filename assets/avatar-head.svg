@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <title>Nacayu 头像</title>
+  <style>
+    .eyes { animation: blink 5.2s infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.08); } }
+    @media (prefers-reduced-motion: reduce) { .eyes { animation: none; } }
+  </style>
+  <defs>
+    <clipPath id="round"><circle cx="120" cy="120" r="118"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="240" height="240" fill="#F2F5FA"/>
+    <!-- 脖子 -->
+    <rect x="106" y="182" width="28" height="20" fill="#F6D6B8"/>
+    <!-- 身体（白色 T 恤，圆形裁切） -->
+    <rect x="62" y="198" width="116" height="48" rx="24" fill="#FFFFFF"/>
+    <circle cx="99"  cy="210" r="5" fill="#4285F4"/>
+    <circle cx="114" cy="210" r="5" fill="#EA4335"/>
+    <circle cx="129" cy="210" r="5" fill="#FBBC05"/>
+    <circle cx="144" cy="210" r="5" fill="#34A853"/>
+    <!-- 耳朵 -->
+    <circle cx="48"  cy="130" r="12" fill="#F6D6B8"/>
+    <circle cx="192" cy="130" r="12" fill="#F6D6B8"/>
+    <!-- 头 -->
+    <circle cx="120" cy="116" r="74" fill="#F6D6B8"/>
+    <!-- 头发：面状发帽 + 三段朝下的圆弧刘海 + 三根分开的呆毛 -->
+    <path d="M 52 86 A 74 74 0 0 1 188 86 A 36 36 0 0 1 143 86 A 36 36 0 0 1 97 86 A 36 36 0 0 1 52 86 Z" fill="#1D1D1F"/>
+    <circle cx="93"  cy="54" r="10" fill="#1D1D1F"/>
+    <circle cx="124" cy="44" r="11" fill="#1D1D1F"/>
+    <circle cx="154" cy="56" r="9"  fill="#1D1D1F"/>
+    <!-- 圆框眼镜 -->
+    <path d="M 70.5 126 L 52 130"  fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 169.5 126 L 188 130" fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="96"  cy="126" r="16" fill="#FFFFFF"/>
+    <circle cx="144" cy="126" r="16" fill="#FFFFFF"/>
+    <circle class="eyes" cx="96"  cy="126" r="5" fill="#1D1D1F"/>
+    <circle class="eyes" cx="144" cy="126" r="5" fill="#1D1D1F"/>
+    <circle cx="96"  cy="126" r="20.75" fill="none" stroke="#1D1D1F" stroke-width="9.5"/>
+    <circle cx="144" cy="126" r="20.75" fill="none" stroke="#1D1D1F" stroke-width="9.5"/>
+    <path d="M 114.8 122 Q 120 118 125.2 122" fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round"/>
+    <!-- 腮红 + 微笑 -->
+    <circle cx="72"  cy="150" r="7" fill="#F0A183" opacity="0.35"/>
+    <circle cx="168" cy="150" r="7" fill="#F0A183" opacity="0.35"/>
+    <path d="M 103 162 Q 120 173 137 162" fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <circle cx="120" cy="120" r="118" fill="none" stroke="#E3E8F0" stroke-width="4"/>
+</svg>

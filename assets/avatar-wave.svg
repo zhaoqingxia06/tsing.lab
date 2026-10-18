@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380">
+  <title>Nacayu 挥手</title>
+  <style>
+    .eyes { animation: blink 5.2s infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.08); } }
+    @media (prefers-reduced-motion: reduce) { .eyes { animation: none; } }
+  </style>
+  <!-- 脖子 -->
+  <rect x="137" y="208" width="26" height="24" fill="#F6D6B8"/>
+  <!-- 身体：白色 T 恤 -->
+  <rect x="85" y="228" width="130" height="112" rx="30" fill="#FFFFFF"/>
+  <!-- 左臂自然下垂 -->
+  <path d="M 94 256 Q 76 296 74 328" fill="none" stroke="#F6D6B8" stroke-width="22" stroke-linecap="round"/>
+  <!-- 右臂高举挥手（肘部外凸，手腕处加粗过渡到手掌） -->
+  <path d="M 204 252 Q 264 204 285 162" fill="none" stroke="#F6D6B8" stroke-width="23" stroke-linecap="round"/>
+  <circle cx="288" cy="155" r="15.5" fill="#F6D6B8"/>
+  <circle cx="206" cy="254" r="20" fill="#FFFFFF"/>
+  <!-- 挥手动感弧线（离手稍远，短促） -->
+  <path d="M 322 112 Q 334 130 330 150" fill="none" stroke="#1D1D1F" stroke-width="5.5" stroke-linecap="round" opacity="0.25"/>
+  <path d="M 306 96 Q 322 108 328 126" fill="none" stroke="#1D1D1F" stroke-width="5.5" stroke-linecap="round" opacity="0.25"/>
+  <!-- 胸口四色圆点 -->
+  <circle cx="124.5" cy="270" r="4.5" fill="#4285F4"/>
+  <circle cx="141.5" cy="270" r="4.5" fill="#EA4335"/>
+  <circle cx="158.5" cy="270" r="4.5" fill="#FBBC05"/>
+  <circle cx="175.5" cy="270" r="4.5" fill="#34A853"/>
+  <!-- 领口 -->
+  <path d="M 126 238 Q 150 254 174 238" fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round"/>
+  <!-- 耳朵 -->
+  <circle cx="63"  cy="150" r="13" fill="#F6D6B8"/>
+  <circle cx="237" cy="150" r="13" fill="#F6D6B8"/>
+  <!-- 头 -->
+  <circle cx="150" cy="132" r="86" fill="#F6D6B8"/>
+  <!-- 头发：面状发帽 + 三段朝下的圆弧刘海 + 三根分开的呆毛 -->
+  <path d="M 71 98 A 86 86 0 0 1 229 98 A 37.5 37.5 0 0 1 176 98 A 37.5 37.5 0 0 1 124 98 A 37.5 37.5 0 0 1 71 98 Z" fill="#1D1D1F"/>
+  <circle cx="108" cy="60" r="12" fill="#1D1D1F"/>
+  <circle cx="148" cy="47" r="13" fill="#1D1D1F"/>
+  <circle cx="186" cy="62" r="11" fill="#1D1D1F"/>
+  <!-- 圆框眼镜 -->
+  <path d="M 88.5 146 L 68 150"   fill="none" stroke="#1D1D1F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 211.5 146 L 232 150" fill="none" stroke="#1D1D1F" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="118" cy="146" r="19.5" fill="#FFFFFF"/>
+  <circle cx="182" cy="146" r="19.5" fill="#FFFFFF"/>
+  <circle class="eyes" cx="118" cy="146" r="6" fill="#1D1D1F"/>
+  <circle class="eyes" cx="182" cy="146" r="6" fill="#1D1D1F"/>
+  <circle cx="118" cy="146" r="24.5" fill="none" stroke="#1D1D1F" stroke-width="10"/>
+  <circle cx="182" cy="146" r="24.5" fill="none" stroke="#1D1D1F" stroke-width="10"/>
+  <path d="M 141.5 141 Q 150 134 158.5 141" fill="none" stroke="#1D1D1F" stroke-width="8" stroke-linecap="round"/>
+  <!-- 腮红 + 微笑 -->
+  <circle cx="93"  cy="176" r="8.5" fill="#F0A183" opacity="0.35"/>
+  <circle cx="207" cy="176" r="8.5" fill="#F0A183" opacity="0.35"/>
+  <path d="M 129 188 Q 150 204 171 188" fill="none" stroke="#1D1D1F" stroke-width="8" stroke-linecap="round"/>
+</svg>

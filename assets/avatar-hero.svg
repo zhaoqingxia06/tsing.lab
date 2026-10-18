@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760">
+  <title>Nacayu 倚靠在字母 N 上</title>
+  <style>
+    .eyes { animation: blink 5.2s infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.08); } }
+    @media (prefers-reduced-motion: reduce) { .eyes { animation: none; } }
+  </style>
+  <!-- 地面阴影（柔） -->
+  <ellipse cx="262" cy="720" rx="172" ry="12" fill="#F2F3F6" opacity="0.9"/>
+  <!-- 巨型字母 N -->
+  <g fill="#E9EAEF">
+    <rect x="350" y="88" width="76" height="672"/>
+    <rect x="514" y="88" width="76" height="672"/>
+    <path d="M 350 88 L 430 88 L 590 760 L 510 760 Z"/>
+  </g>
+  <!-- 左臂（自然下垂） -->
+  <path d="M 172 416 Q 148 474 146 538" fill="none" stroke="#F6D6B8" stroke-width="30" stroke-linecap="round"/>
+  <!-- 双腿与鞋（白鞋 + 墨色鞋底） -->
+  <path d="M 194 612 L 190 690" stroke="#1D1D1F" stroke-width="40" stroke-linecap="round"/>
+  <path d="M 278 612 L 282 690" stroke="#1D1D1F" stroke-width="40" stroke-linecap="round"/>
+  <g transform="rotate(-6 193 698)">
+    <rect x="156" y="698" width="74" height="12" rx="6" fill="#1D1D1F"/>
+    <rect x="156" y="682" width="74" height="26" rx="13" fill="#FFFFFF"/>
+  </g>
+  <g transform="rotate(6 279 698)">
+    <rect x="242" y="698" width="74" height="12" rx="6" fill="#1D1D1F"/>
+    <rect x="242" y="682" width="74" height="26" rx="13" fill="#FFFFFF"/>
+  </g>
+  <!-- 脖子（先画，被领口压住下端） -->
+  <rect x="215" y="344" width="40" height="36" fill="#F6D6B8"/>
+  <!-- 裤子 + 上衣 -->
+  <rect x="168" y="566" width="134" height="64" rx="28" fill="#1D1D1F"/>
+  <rect x="156" y="372" width="158" height="210" rx="46" fill="#FFFFFF"/>
+  <!-- 领口与胸口四色圆点 -->
+  <path d="M 203 384 Q 235 402 267 384" fill="none" stroke="#1D1D1F" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="209" cy="460" r="5.5" fill="#4285F4"/>
+  <circle cx="227" cy="460" r="5.5" fill="#EA4335"/>
+  <circle cx="245" cy="460" r="5.5" fill="#FBBC05"/>
+  <circle cx="263" cy="460" r="5.5" fill="#34A853"/>
+  <!-- 右臂：明显屈肘，小臂搭在字母边缘，手压在 N 前 -->
+  <path d="M 306 414 L 326 480 L 356 424" fill="none" stroke="#F6D6B8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="306" cy="416" r="21" fill="#FFFFFF"/>
+  <circle cx="358" cy="418" r="16" fill="#F6D6B8"/>
+  <!-- 耳朵 -->
+  <circle cx="126" cy="270" r="16" fill="#F6D6B8"/>
+  <circle cx="344" cy="270" r="16" fill="#F6D6B8"/>
+  <!-- 头 -->
+  <circle cx="235" cy="246" r="104" fill="#F6D6B8"/>
+  <!-- 头发：面状发帽 + 三段朝下的圆弧刘海 + 三根分开的呆毛 -->
+  <path d="M 142 200 A 104 104 0 0 1 328 200 A 34 34 0 0 1 266 200 A 34 34 0 0 1 204 200 A 34 34 0 0 1 142 200 Z" fill="#1D1D1F"/>
+  <circle cx="170" cy="152" r="14" fill="#1D1D1F"/>
+  <circle cx="232" cy="136" r="15" fill="#1D1D1F"/>
+  <circle cx="290" cy="154" r="12" fill="#1D1D1F"/>
+  <!-- 圆框眼镜 -->
+  <path d="M 152 266 L 132 270"   fill="none" stroke="#1D1D1F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 318 266 L 338 270"   fill="none" stroke="#1D1D1F" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="188" cy="266" r="24" fill="#FFFFFF"/>
+  <circle cx="282" cy="266" r="24" fill="#FFFFFF"/>
+  <circle class="eyes" cx="188" cy="266" r="7.5" fill="#1D1D1F"/>
+  <circle class="eyes" cx="282" cy="266" r="7.5" fill="#1D1D1F"/>
+  <circle cx="188" cy="266" r="30" fill="none" stroke="#1D1D1F" stroke-width="12"/>
+  <circle cx="282" cy="266" r="30" fill="none" stroke="#1D1D1F" stroke-width="12"/>
+  <path d="M 216 262 Q 235 252 254 262" fill="none" stroke="#1D1D1F" stroke-width="9" stroke-linecap="round"/>
+  <!-- 腮红 + 微笑 -->
+  <circle cx="155" cy="318" r="10" fill="#F0A183" opacity="0.35"/>
+  <circle cx="315" cy="318" r="10" fill="#F0A183" opacity="0.35"/>
+  <path d="M 208 332 Q 235 350 262 332" fill="none" stroke="#1D1D1F" stroke-width="9" stroke-linecap="round"/>
+  <!-- 环境点缀（小而少，四角均衡） -->
+  <circle cx="95"  cy="150" r="7"   fill="#4285F4"/>
+  <path d="M 598 104 v 28 M 584 118 h 28" stroke="#FBBC05" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="610" cy="548" r="5"   fill="#34A853"/>
+  <circle cx="108" cy="606" r="4.5" fill="#EA4335"/>
+</svg>

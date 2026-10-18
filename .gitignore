@@ -1,0 +1,10 @@
+# 设计/构建过程资产，不上线
+work/
+output/
+task-archive/
+tools/
+
+# 系统与缓存
+.DS_Store
+__pycache__/
+*.pyc
