@@ -7,6 +7,7 @@
 .case-title { margin-top: 10px; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.25; letter-spacing: -.035em; }
 .case-summary { max-width: 56ch; margin-top: 16px; color: var(--ink-2); font-size: 16px; }
 .product-tabs { display: inline-flex; gap: 4px; max-width: 100%; padding: 4px; background: var(--panel); border-radius: var(--radius-pill); }
+.case-page--products .product-tabs { display: flex; width: max-content; margin-top: 24px; }
 .product-tab { appearance: none; border: 0; padding: 11px 24px; min-height: 44px; border-radius: var(--radius-pill); background: transparent; color: var(--ink-2); font: inherit; font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; }
 .product-tab:hover { color: var(--ink); }
 .product-tab[aria-selected="true"] { color: var(--ink); background: var(--bg); box-shadow: var(--shadow-sm); }
