@@ -811,10 +811,18 @@ a.about-meta-item:hover {
 
 .about-meta-item svg { flex: none; }
 
-.about-bio {
-  margin-top: 22px;
+.about-intro { margin-top: 26px; max-width: 64ch; }
+.about-greeting { font-size: 22px; font-weight: 650; line-height: 1.45; letter-spacing: -.02em; }
+.about-personality {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 14px;
   color: var(--ink-2);
 }
+.about-personality [aria-hidden] { color: var(--ink-3); }
+.about-intro-lines { margin-top: 16px; font-size: 17px; line-height: 1.85; color: var(--ink-2); }
 
 /* 经历：一张张悬浮小卡片 */
 .exp-title {
