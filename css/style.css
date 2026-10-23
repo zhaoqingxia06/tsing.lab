@@ -812,9 +812,8 @@ a.about-meta-item:hover {
 .about-meta-item svg { flex: none; }
 
 .about-intro { margin-top: 26px; max-width: 64ch; }
-.about-greeting { font-size: 22px; font-weight: 650; line-height: 1.45; letter-spacing: -.02em; }
-.about-mbti { font-size: 14px; font-weight: 500; color: var(--ink-2); letter-spacing: .02em; }
-.about-intro-lines { margin-top: 16px; font-size: 17px; line-height: 1.85; color: var(--ink-2); }
+.about-greeting { font-size: 17px; font-weight: 600; line-height: 1.85; }
+.about-intro-text { margin-top: 12px; font-size: 17px; line-height: 1.85; color: var(--ink-2); }
 
 /* 经历：一张张悬浮小卡片 */
 .exp-title {
@@ -990,6 +989,7 @@ a.about-meta-item:hover {
   .exp-time { grid-column: 1 / -1; }
 
   .about-role { font-size: 21px; }
+  .about-intro-text { font-size: 16px; }
 
   .footer-inner { flex-direction: column; gap: 4px; }
 }
