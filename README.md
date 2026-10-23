@@ -30,12 +30,22 @@
 | 换主色 | 改 `css/style.css` 顶部 `:root` 里的 `--blue`（按钮、链接） |
 | 换四色点缀 | 改 `:root` 里的 `--dot-1` ~ `--dot-4`（工具序号、地图图钉；与头像设计稿一致） |
 
+## 经历项目介绍页
+
+- `projects/vivo.html`：语音转文字、环境音识别、手语翻译三个 Tab；每个面板有独立标题与正文区域。
+- `projects/ninebot.html`：城市通勤 eBike 项目页。
+- 补充介绍时，替换对应页面的 `.case-empty` 占位区域即可；内容与图片均可直接写入该面板。现阶段只标注待补充，不包含虚构介绍。
+- vivo 支持直达产品：`#speech-to-text`、`#sound-recognition`、`#sign-language`。Tab 交互在 `js/project-tabs.js`，页面样式在 `css/projects.css`。
+- 入口位于首页“关于我”的两段经历下方；所有站内链接均为相对路径，可用于本地文件或 GitHub Pages。
+
 ## 目录结构
 
 ```
 ├── index.html          # 页面内容都在这里（重点改这个文件）
 ├── css/style.css       # 样式（主题色在文件顶部 :root 里）
-├── js/main.js          # 轻量交互，一般不用动
+├── js/main.js          # 首页交互
+├── js/project-tabs.js  # 产品介绍页 Tab 切换
+├── projects/           # 工作经历项目介绍页
 ├── assets/             # 图片素材（favicon、og 分享图、人物底图）
 ├── work/               # 设计过程资产与预览页，不上线
 ├── output/             # 动图等独立交付物，不上线
