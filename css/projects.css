@@ -40,3 +40,14 @@
 
 .sign-page .sign-practice-shift { position: absolute; top: 0; left: 7%; width: 100%; height: auto; clip-path: inset(9% 30.5% 9% 48.1%); pointer-events: none; }
 .sign-usage { margin: 0; padding: 24px 12px 12px; text-align: center; color: #737d8e; font-size: 14px; line-height: 1.7; }
+
+.sign-learning { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 6%; padding: 7% 7%; background: #f2f5fa; }
+.sign-learning-copy h2 { margin: 0; color: #192236; font-size: clamp(24px, 3.2vw, 36px); line-height: 1.25; font-weight: 700; }
+.sign-learning-copy p { margin: 16px 0 0; color: #647083; font-size: clamp(14px, 1.5vw, 17px); line-height: 1.7; }
+.sign-learning-panel { position: relative; overflow: hidden; width: 100%; aspect-ratio: 669 / 827; }
+.sign-learning-panel img { position: absolute; width: 269.06%; max-width: none; height: auto; left: -143.5%; top: -14.87%; }
+@media (max-width: 640px) {
+  .sign-learning { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+  .sign-learning-copy p { margin-top: 10px; }
+  .sign-learning-panel { max-width: 460px; }
+}
