@@ -15,6 +15,9 @@
 .product-panel { margin-top: 36px; }
 .sign-introduction img { display: block; width: 100%; height: auto; }
 .sign-introduction img[hidden] { display: none; }
+.sign-page { position: relative; overflow: hidden; }
+.sign-page .sign-header-cover { position: absolute; top: -4%; left: 0; width: 100%; height: auto; clip-path: inset(7% 3% 88% 85%); pointer-events: none; }
+.sign-duplicate-cover { position: absolute; left: 70%; top: 9%; width: 21.3%; height: 82%; background: #fff; pointer-events: none; }
 .product-title { font-size: 26px; font-weight: 650; line-height: 1.4; letter-spacing: -.02em; }
 .case-empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 180px; margin-top: 20px; padding: 32px; border-radius: var(--radius-card); background: var(--panel); }
 .case-empty-title { font-size: 16px; font-weight: 500; }
@@ -31,3 +34,6 @@
   .product-title { font-size: 24px; }
   .case-empty { padding: 24px; min-height: 160px; }
 }
+/* The practice slide's neighboring pixels contain the phone UI, so use its white background here. */
+.sign-page:nth-child(10) .sign-header-cover { display: none; }
+.sign-page:nth-child(10)::after { content: ""; position: absolute; top: 3%; right: 3%; width: 12%; height: 5%; background: #fff; pointer-events: none; }
