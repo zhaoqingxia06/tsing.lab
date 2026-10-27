@@ -22,6 +22,7 @@
   .case-page { padding: 20px 24px 40px; }
   .case-heading { margin: 24px 0; }
   .case-summary { font-size: 15px; }
+  .case-page--products .product-tabs { width: 100%; flex-wrap: wrap; border-radius: 20px; }
   .product-tab { padding: 10px; font-size: 14px; }
   .product-panel { margin-top: 28px; }
   .product-title { font-size: 24px; }
