@@ -11,8 +11,8 @@
   <style>
     .myon-page { max-width: 1064px; margin: 0 auto; padding: 36px 32px 80px; }
     .myon-intro { margin: 54px 0 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .myon-bike { width: min(36%, 310px); height: auto; flex: none; }
-    .myon-wheel { transform-box: fill-box; transform-origin: center; animation: myon-wheel-turn 2s linear infinite; }
+    .myon-bike { width: min(36%, 310px); height: auto; flex: none; border-radius: 14px; }
+    .myon-wheel { transform-box: view-box; animation: myon-wheel-turn 2s linear infinite; }
     @keyframes myon-wheel-turn { to { transform: rotate(360deg); } }
     @media (prefers-reduced-motion: reduce) { .myon-wheel { animation: none; } }
     .myon-intro h1 { margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; letter-spacing: -.035em; }
@@ -35,27 +35,10 @@
         <h1>Segway Ebike Myon</h1>
         <p>城市通勤电助力自行车 · 产品介绍</p>
       </div>
-      <svg class="myon-bike" viewBox="0 0 380 220" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <path d="M32 196H365" stroke="#d5d6da" stroke-width="2" stroke-linecap="round"/>
-        <path d="M28 150h20m-20 0 7-6m-7 6 7 6" fill="none" stroke="#2682ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M48 171h19m-8 10h19" stroke="#a9acb1" stroke-width="3" stroke-linecap="round"/>
-        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <g class="myon-wheel" stroke="#303640">
-            <circle cx="115" cy="158" r="36" stroke-width="9"/><circle cx="115" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
-            <path d="M115 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="115" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
-          </g>
-          <g class="myon-wheel" stroke="#303640">
-            <circle cx="284" cy="158" r="36" stroke-width="9"/><circle cx="284" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
-            <path d="M284 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="284" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
-          </g>
-          <path d="M80 128q35-37 69 0" stroke="#303640" stroke-width="4"/>
-          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 284 158 M171 75 163 53 M258 91 251 47" stroke="#303640" stroke-width="9"/>
-          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 M171 75 163 53 M258 91 251 47" stroke="#fff" stroke-width="5"/>
-          <path d="M153 52h26q4 0 2 4l-15 3-13-3q-4-2 0-4ZM245 45l13-7m-5 6 3 11" stroke="#303640" stroke-width="5"/>
-          <path d="M115 158h72m0 0 20 0" stroke="#303640" stroke-width="5"/>
-          <circle cx="187" cy="158" r="11" fill="#48576a" stroke="#303640" stroke-width="3"/><circle cx="187" cy="158" r="6" stroke="#2581ff" stroke-width="2"/>
-          <path d="M275 72l6-7m0 17 10-1m-11 10 8 5" stroke="#2682ff" stroke-width="3"/>
-        </g>
+      <svg class="myon-bike" viewBox="820 90 500 235" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <image href="../assets/myon-bike-reference.png" width="1376" height="350" />
+        <circle class="myon-wheel" cx="1002" cy="258" r="49" fill="none" stroke="#9aa1aa" stroke-width="2" stroke-dasharray="7 301" style="transform-origin: 1002px 258px;" />
+        <circle class="myon-wheel" cx="1209" cy="258" r="49" fill="none" stroke="#9aa1aa" stroke-width="2" stroke-dasharray="7 301" style="transform-origin: 1209px 258px;" />
       </svg>
     </header>
     <section class="myon-section">
