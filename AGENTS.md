@@ -12,7 +12,7 @@
 
 ## 其他约定
 
-- 网站部署在 GitHub Pages（仓库 `zhaoqingxia06/zhaoqingxia06.github.io`，main 分支即线上），改动 `git commit + git push` 后 1–2 分钟生效；
+- 网站部署在 GitHub Pages（仓库 `zhaoqingxia06/tsing.lab`，线上地址 https://zhaoqingxia06.github.io/tsing.lab/ ，main 分支即线上），改动 `git commit + git push` 后 1–2 分钟生效；
 - `work/`、`output/`、`task-archive/` 是过程资产，不进 git、不上线；
 - 手机号、出生日期、求职意向等隐私信息不得出现在公开页面上；
 - 涉及任务档案站（TaskArchive）的入口链接使用 https://zhaoqingxia06.github.io/TaskArchive/ 。
