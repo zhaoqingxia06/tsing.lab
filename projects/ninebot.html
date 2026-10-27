@@ -4,27 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>九号公司 · 城市通勤 eBike · Tsing</title>
-  <meta name="description" content="Tsing 在九号公司负责的城市通勤 eBike 整车产品项目。" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/style.css?v=29" />
-  <link rel="stylesheet" href="../css/projects.css?v=1" />
+  <style>
+    .ninebot-page { max-width: 1064px; margin: 0 auto; padding: 36px 32px; }
+    .ninebot-card { min-height: 280px; padding: 38px 42px; border-radius: 24px; background: #f4f4f6; display: flex; align-items: center; justify-content: space-between; gap: 24px; overflow: hidden; }
+    .ninebot-copy { flex: 1 0 auto; }
+    .ninebot-copy h1 { margin: 0; font-size: clamp(25px, 3vw, 34px); line-height: 1.3; font-weight: 700; letter-spacing: -.03em; }
+    .ninebot-copy p { margin: 10px 0 0; color: #777980; font-size: clamp(15px, 1.6vw, 19px); }
+    .bike { width: min(42%, 370px); height: auto; flex: none; overflow: visible; }
+    .wheel { transform-box: fill-box; transform-origin: center; animation: wheel-turn 2s linear infinite; }
+    @keyframes wheel-turn { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .wheel { animation: none; } }
+    @media (max-width: 600px) {
+      .ninebot-page { padding: 20px; }
+      .ninebot-card { min-height: 0; padding: 30px 26px 24px; align-items: flex-start; flex-direction: column; gap: 12px; }
+      .bike { width: min(100%, 320px); align-self: flex-end; }
+    }
+  </style>
 </head>
 <body>
-  <main class="case-page">
-    <a class="case-back" href="../index.html#about"><span aria-hidden="true">←</span> 返回关于我</a>
-    <div class="case-heading">
-      <p class="case-role">九号公司 · 整车产品经理</p>
-      <h1 class="case-title">城市通勤 eBike</h1>
-      <p class="case-summary">负责城市通勤 eBike 的整车产品，覆盖从概念、硬件、软件到 GTM 与销售的全链路。</p>
-    </div>
-    <!-- Replace this placeholder with the supplied project introduction. -->
-    <section aria-label="项目介绍">
-      <div class="case-empty">
-        <p class="case-empty-title">项目介绍待补充</p>
-        <p class="case-empty-note">详细介绍将在这里更新。</p>
+  <main class="ninebot-page">
+    <section class="ninebot-card" aria-label="项目更新状态">
+      <div class="ninebot-copy">
+        <h1>哎，先停一下</h1>
+        <p>项目详情还在整理，稍后更新。</p>
       </div>
+      <svg class="bike" viewBox="0 0 380 220" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 196H365" stroke="#d5d6da" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 150h20m-20 0 7-6m-7 6 7 6" fill="none" stroke="#2682ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M48 171h19m-8 10h19" stroke="#a9acb1" stroke-width="3" stroke-linecap="round"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <g class="wheel" stroke="#303640">
+            <circle cx="115" cy="158" r="36" stroke-width="9"/><circle cx="115" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
+            <path d="M115 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="115" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
+          </g>
+          <g class="wheel" stroke="#303640">
+            <circle cx="284" cy="158" r="36" stroke-width="9"/><circle cx="284" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
+            <path d="M284 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="284" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
+          </g>
+          <path d="M80 128q35-37 69 0" stroke="#303640" stroke-width="4"/>
+          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 284 158 M171 75 163 53 M258 91 251 47" stroke="#303640" stroke-width="9"/>
+          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 M171 75 163 53 M258 91 251 47" stroke="#f4f4f6" stroke-width="5"/>
+          <path d="M153 52h26q4 0 2 4l-15 3-13-3q-4-2 0-4ZM245 45l13-7m-5 6 3 11" stroke="#303640" stroke-width="5"/>
+          <path d="M115 158h72m0 0 20 0" stroke="#303640" stroke-width="5"/>
+          <circle cx="187" cy="158" r="11" fill="#48576a" stroke="#303640" stroke-width="3"/><circle cx="187" cy="158" r="6" stroke="#2581ff" stroke-width="2"/>
+          <path d="M275 72l6-7m0 17 10-1m-11 10 8 5" stroke="#2682ff" stroke-width="3"/>
+        </g>
+      </svg>
     </section>
-    <footer class="case-footer">Tsing / 产品项目</footer>
   </main>
 </body>
 </html>
