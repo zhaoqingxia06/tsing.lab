@@ -3,55 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>九号公司 · 城市通勤 eBike · Tsing</title>
+  <meta name="description" content="Segway Myon 电助力自行车产品介绍。" />
+  <title>Segway Myon · 九号公司 · Tsing</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/style.css?v=29" />
+  <link rel="stylesheet" href="../css/projects.css?v=5" />
   <style>
-    .ninebot-page { max-width: 1064px; margin: 0 auto; padding: 36px 32px; }
-    .ninebot-card { min-height: 280px; padding: 38px 42px; border-radius: 24px; background: #f4f4f6; display: flex; align-items: center; justify-content: space-between; gap: 24px; overflow: hidden; }
-    .ninebot-copy { flex: 1 0 auto; }
-    .ninebot-copy h1 { margin: 0; font-size: clamp(25px, 3vw, 34px); line-height: 1.3; font-weight: 700; letter-spacing: -.03em; }
-    .ninebot-copy p { margin: 10px 0 0; color: #777980; font-size: clamp(15px, 1.6vw, 19px); }
-    .bike { width: min(42%, 370px); height: auto; flex: none; overflow: visible; }
-    .wheel { transform-box: fill-box; transform-origin: center; animation: wheel-turn 2s linear infinite; }
-    @keyframes wheel-turn { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .wheel { animation: none; } }
-    @media (max-width: 600px) {
-      .ninebot-page { padding: 20px; }
-      .ninebot-card { min-height: 0; padding: 30px 26px 24px; align-items: flex-start; flex-direction: column; gap: 12px; }
-      .bike { width: min(100%, 320px); align-self: flex-end; }
-    }
+    .myon-page { max-width: 1064px; margin: 0 auto; padding: 36px 32px 80px; }
+    .myon-intro { margin: 54px 0 38px; }
+    .myon-intro h1 { margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; letter-spacing: -.035em; }
+    .myon-intro p { margin: 12px 0 0; color: #6f737c; line-height: 1.65; }
+    .myon-section { margin-top: 56px; }
+    .myon-section h2 { margin: 0; font-size: 23px; letter-spacing: -.02em; }
+    .myon-section > p { margin: 8px 0 20px; color: #737780; font-size: 15px; }
+    .myon-slide { margin: 0 0 14px; overflow: hidden; border-radius: 12px; background: #f3f4f6; }
+    .myon-slide a { display: block; }
+    .myon-slide a:focus-visible { outline: 3px solid #2682ff; outline-offset: -3px; }
+    .myon-slide img { display: block; width: 100%; height: auto; }
+    @media (max-width: 600px) { .myon-page { padding: 20px 20px 56px; } .myon-intro { margin: 38px 0 30px; } .myon-section { margin-top: 38px; } .myon-section h2 { font-size: 20px; } .myon-slide { margin-bottom: 10px; border-radius: 8px; } }
   </style>
 </head>
 <body>
-  <main class="ninebot-page">
-    <section class="ninebot-card" aria-label="项目更新状态">
-      <div class="ninebot-copy">
-        <h1>哎，先停一下</h1>
-        <p>项目详情还在整理，稍后更新。</p>
-      </div>
-      <svg class="bike" viewBox="0 0 380 220" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <path d="M32 196H365" stroke="#d5d6da" stroke-width="2" stroke-linecap="round"/>
-        <path d="M28 150h20m-20 0 7-6m-7 6 7 6" fill="none" stroke="#2682ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M48 171h19m-8 10h19" stroke="#a9acb1" stroke-width="3" stroke-linecap="round"/>
-        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <g class="wheel" stroke="#303640">
-            <circle cx="115" cy="158" r="36" stroke-width="9"/><circle cx="115" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
-            <path d="M115 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="115" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
-          </g>
-          <g class="wheel" stroke="#303640">
-            <circle cx="284" cy="158" r="36" stroke-width="9"/><circle cx="284" cy="158" r="28" stroke="#afb4bc" stroke-width="2"/>
-            <path d="M284 130v56m-28-28h56m-48-20 40 40m0-40-40 40" stroke="#9ca3ad" stroke-width="1.4"/><circle cx="284" cy="158" r="6" fill="#c8cbd0" stroke-width="3"/>
-          </g>
-          <path d="M80 128q35-37 69 0" stroke="#303640" stroke-width="4"/>
-          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 284 158 M171 75 163 53 M258 91 251 47" stroke="#303640" stroke-width="9"/>
-          <path d="M115 158 154 111 187 158 115 158 M154 111 171 75 M187 158 224 158 258 91 M171 75 163 53 M258 91 251 47" stroke="#f4f4f6" stroke-width="5"/>
-          <path d="M153 52h26q4 0 2 4l-15 3-13-3q-4-2 0-4ZM245 45l13-7m-5 6 3 11" stroke="#303640" stroke-width="5"/>
-          <path d="M115 158h72m0 0 20 0" stroke="#303640" stroke-width="5"/>
-          <circle cx="187" cy="158" r="11" fill="#48576a" stroke="#303640" stroke-width="3"/><circle cx="187" cy="158" r="6" stroke="#2581ff" stroke-width="2"/>
-          <path d="M275 72l6-7m0 17 10-1m-11 10 8 5" stroke="#2682ff" stroke-width="3"/>
-        </g>
-      </svg>
+  <main class="myon-page">
+    <a class="case-back" href="../index.html#about"><span aria-hidden="true">←</span> 返回关于我</a>
+    <header class="myon-intro">
+      <h1>Segway Myon</h1>
+      <p>城市通勤电助力自行车 · 产品介绍</p>
+      <p>点击图片可查看大图。</p>
+    </header>
+    <section class="myon-section">
+      <h2>产品概览</h2>
+      <p>Segway Myon 城市通勤电助力自行车</p>
+      <figure class="myon-slide"><a href="../assets/myon/page-01.jpg" target="_blank" rel="noopener" aria-label="查看大图：产品封面"><img src="../assets/myon/page-01.jpg" alt="Myon 产品介绍：产品封面" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-02.jpg" target="_blank" rel="noopener" aria-label="查看大图：产品概览"><img src="../assets/myon/page-02.jpg" alt="Myon 产品介绍：产品概览" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-03.jpg" target="_blank" rel="noopener" aria-label="查看大图：车型配色"><img src="../assets/myon/page-03.jpg" alt="Myon 产品介绍：车型配色" loading="lazy" /></a></figure>
+    </section>
+    <section class="myon-section">
+      <h2>智能骑行</h2>
+      <p>解锁、定位、照明与安全提醒</p>
+      <figure class="myon-slide"><a href="../assets/myon/page-04.jpg" target="_blank" rel="noopener" aria-label="查看大图：智能骑行"><img src="../assets/myon/page-04.jpg" alt="Myon 产品介绍：智能骑行" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-05.jpg" target="_blank" rel="noopener" aria-label="查看大图：AirLock 自动解锁与上锁"><img src="../assets/myon/page-05.jpg" alt="Myon 产品介绍：AirLock 自动解锁与上锁" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-06.jpg" target="_blank" rel="noopener" aria-label="查看大图：车辆定位"><img src="../assets/myon/page-06.jpg" alt="Myon 产品介绍：车辆定位" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-07.jpg" target="_blank" rel="noopener" aria-label="查看大图：显示与远程升级"><img src="../assets/myon/page-07.jpg" alt="Myon 产品介绍：显示与远程升级" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-08.jpg" target="_blank" rel="noopener" aria-label="查看大图：自动前灯与刹车尾灯"><img src="../assets/myon/page-08.jpg" alt="Myon 产品介绍：自动前灯与刹车尾灯" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-09.jpg" target="_blank" rel="noopener" aria-label="查看大图：后方雷达安全提醒"><img src="../assets/myon/page-09.jpg" alt="Myon 产品介绍：后方雷达安全提醒" loading="lazy" /></a></figure>
+    </section>
+    <section class="myon-section">
+      <h2>电子变速</h2>
+      <p>自动变速与多种骑行模式</p>
+      <figure class="myon-slide"><a href="../assets/myon/page-10.jpg" target="_blank" rel="noopener" aria-label="查看大图：电子变速"><img src="../assets/myon/page-10.jpg" alt="Myon 产品介绍：电子变速" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-11.jpg" target="_blank" rel="noopener" aria-label="查看大图：自动变速体验"><img src="../assets/myon/page-11.jpg" alt="Myon 产品介绍：自动变速体验" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-12.jpg" target="_blank" rel="noopener" aria-label="查看大图：电子变速模式"><img src="../assets/myon/page-12.jpg" alt="Myon 产品介绍：电子变速模式" loading="lazy" /></a></figure>
+    </section>
+    <section class="myon-section">
+      <h2>灵活车架</h2>
+      <p>可拆卸上管带来不同骑行形态</p>
+      <figure class="myon-slide"><a href="../assets/myon/page-13.jpg" target="_blank" rel="noopener" aria-label="查看大图：可拆卸上管"><img src="../assets/myon/page-13.jpg" alt="Myon 产品介绍：可拆卸上管" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-14.jpg" target="_blank" rel="noopener" aria-label="查看大图：两种车架形态"><img src="../assets/myon/page-14.jpg" alt="Myon 产品介绍：两种车架形态" loading="lazy" /></a></figure>
+    </section>
+    <section class="myon-section">
+      <h2>动力与舒适</h2>
+      <p>电池、动力、减震及维护设计</p>
+      <figure class="myon-slide"><a href="../assets/myon/page-15.jpg" target="_blank" rel="noopener" aria-label="查看大图：动力与舒适性"><img src="../assets/myon/page-15.jpg" alt="Myon 产品介绍：动力与舒适性" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-16.jpg" target="_blank" rel="noopener" aria-label="查看大图：电池与续航方案"><img src="../assets/myon/page-16.jpg" alt="Myon 产品介绍：电池与续航方案" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-17.jpg" target="_blank" rel="noopener" aria-label="查看大图：电机与自适应助力"><img src="../assets/myon/page-17.jpg" alt="Myon 产品介绍：电机与自适应助力" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-18.jpg" target="_blank" rel="noopener" aria-label="查看大图：多层减震"><img src="../assets/myon/page-18.jpg" alt="Myon 产品介绍：多层减震" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-19.jpg" target="_blank" rel="noopener" aria-label="查看大图：易维护设计"><img src="../assets/myon/page-19.jpg" alt="Myon 产品介绍：易维护设计" loading="lazy" /></a></figure>
+      <figure class="myon-slide"><a href="../assets/myon/page-20.jpg" target="_blank" rel="noopener" aria-label="查看大图：配件选择"><img src="../assets/myon/page-20.jpg" alt="Myon 产品介绍：配件选择" loading="lazy" /></a></figure>
     </section>
   </main>
 </body>
