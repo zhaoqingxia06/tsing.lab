@@ -12,6 +12,7 @@
 .product-tab:hover { color: var(--ink); }
 .product-tab[aria-selected="true"] { color: var(--ink); background: var(--bg); box-shadow: var(--shadow-sm); }
 .product-panel { margin-top: 36px; }
+.sign-introduction img { display: block; width: 100%; height: auto; }
 .product-title { font-size: 26px; font-weight: 650; line-height: 1.4; letter-spacing: -.02em; }
 .case-empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 180px; margin-top: 20px; padding: 32px; border-radius: var(--radius-card); background: var(--panel); }
 .case-empty-title { font-size: 16px; font-weight: 500; }
