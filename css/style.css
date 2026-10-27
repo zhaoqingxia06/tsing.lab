@@ -302,7 +302,8 @@ section { scroll-margin-top: 76px; }
 }
 
 /* TaskArchive：保持原图比例并完整呈现内容 */
-.work-archive .window-media { object-fit: contain; object-position: center; background: #fff; }
+.work-archive .window-media,
+.work-behavior .window-media { object-fit: contain; object-position: center; background: #fff; }
 
 /* ChatNote：展示对话与文档，填满卡片左侧 */
 .chatnote-media { position: relative; flex: 1; min-height: 250px; overflow: hidden; }
