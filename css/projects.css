@@ -6,13 +6,15 @@
 .case-role { font-size: 14px; color: var(--ink-2); }
 .case-title { margin-top: 10px; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.25; letter-spacing: -.035em; }
 .case-summary { max-width: 56ch; margin-top: 16px; color: var(--ink-2); font-size: 16px; }
-.product-tabs { display: inline-flex; gap: 4px; max-width: 100%; padding: 4px; background: var(--panel); border-radius: var(--radius-pill); }
-.case-page--products .product-tabs { display: flex; width: max-content; margin-top: 24px; }
-.product-tab { appearance: none; border: 0; padding: 11px 24px; min-height: 44px; border-radius: var(--radius-pill); background: transparent; color: var(--ink-2); font: inherit; font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; }
-.product-tab:hover { color: var(--ink); }
-.product-tab[aria-selected="true"] { color: var(--ink); background: var(--bg); box-shadow: var(--shadow-sm); }
+ .case-page--products .product-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: 100%; margin-top: 24px; }
+.product-tab { appearance: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-width: 0; min-height: 154px; padding: 22px 8px; border: 0; border-radius: 14px; background: #f5f5f6; color: var(--ink-2); font: inherit; font-size: 16px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.product-tab-icon { width: 38px; height: 38px; flex: none; }
+.product-tab:hover { color: var(--ink); background: #eeeef0; }
+.product-tab[aria-selected="true"] { color: var(--ink); background: #e8e8ea; }
+.product-tab:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .product-panel { margin-top: 36px; }
 .sign-introduction img { display: block; width: 100%; height: auto; }
+.sign-introduction img[hidden] { display: none; }
 .product-title { font-size: 26px; font-weight: 650; line-height: 1.4; letter-spacing: -.02em; }
 .case-empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 180px; margin-top: 20px; padding: 32px; border-radius: var(--radius-card); background: var(--panel); }
 .case-empty-title { font-size: 16px; font-weight: 500; }
@@ -22,8 +24,9 @@
   .case-page { padding: 20px 24px 40px; }
   .case-heading { margin: 24px 0; }
   .case-summary { font-size: 15px; }
-  .case-page--products .product-tabs { width: 100%; flex-wrap: wrap; border-radius: 20px; }
-  .product-tab { padding: 10px; font-size: 14px; }
+  .case-page--products .product-tabs { gap: 6px; }
+  .product-tab { min-height: 104px; gap: 10px; padding: 14px 2px; border-radius: 10px; font-size: clamp(10px, 3vw, 13px); }
+  .product-tab-icon { width: 28px; height: 28px; }
   .product-panel { margin-top: 28px; }
   .product-title { font-size: 24px; }
   .case-empty { padding: 24px; min-height: 160px; }

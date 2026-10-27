@@ -3,6 +3,12 @@
   const tablist = document.querySelector('[data-product-tabs]');
   if (!tablist) return;
 
+  document.querySelectorAll('.sign-introduction img').forEach(img => {
+    const hideFailedImage = () => { img.hidden = true; };
+    img.addEventListener('error', hideFailedImage);
+    if (img.complete && !img.naturalWidth) hideFailedImage();
+  });
+
   const tabs = [...tablist.querySelectorAll('[role="tab"]')];
   const firstProduct = tabs[0].dataset.product;
 
