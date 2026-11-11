@@ -54,5 +54,5 @@
 
 ## 已上线
 
-网站部署在 GitHub Pages：<https://zhaoqingxia06.github.io/>（仓库 `zhaoqingxia06/zhaoqingxia06.github.io`）。
+网站部署在 GitHub Pages：<https://zhaoqingxia06.github.io/tsing.lab/>（仓库 `zhaoqingxia06/tsing.lab`）。
 改完文件后：`git add -A && git commit -m "说明" && git push`，一到两分钟后线上生效。
