@@ -10,6 +10,12 @@
 - 核心卖点：三条，每条「四字标签 + 一句短说明」，说明不超过 15 字；
 - 语气克制专业，避免口语化表达（如「顺手」「不慌」「一网打尽」）。
 
+## UI 文案与布局原则
+
+- **Avoid unnecessary section labels and descriptions. Let the layout do the explaining.**
+- 优先用布局、间距、对齐、视觉层级与交互状态表达信息关系，不为每个区域添加多余标题、辅助说明或小字注释。
+- 只保留用户完成任务所必需的名称、关键参数、操作提示、状态反馈与安全信息；删除重复、空泛或仅解释页面结构的文案。
+
 ## 其他约定
 
 - 网站部署在 GitHub Pages（仓库 `zhaoqingxia06/tsing.lab`，线上地址 https://zhaoqingxia06.github.io/tsing.lab/ ，main 分支即线上），改动 `git commit + git push` 后 1–2 分钟生效；
